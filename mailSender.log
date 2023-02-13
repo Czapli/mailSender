@@ -1,0 +1,26 @@
+2023-02-12T21:55:18.152+01:00  INFO 6580 --- [main] n.c.mailSender.MailSenderApplication     : Starting MailSenderApplication using Java 17.0.4.1 with PID 6580 (C:\Users\ja\OneDrive\javaProjects\mailSender\build\classes\java\main started by ja in C:\Users\ja\OneDrive\javaProjects\mailSender)
+2023-02-12T21:55:18.154+01:00 DEBUG 6580 --- [main] n.c.mailSender.MailSenderApplication     : Running with Spring Boot v3.0.2, Spring v6.0.4
+2023-02-12T21:55:18.155+01:00  INFO 6580 --- [main] n.c.mailSender.MailSenderApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-02-12T21:55:18.544+01:00  INFO 6580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-12T21:55:18.581+01:00  INFO 6580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interfaces.
+2023-02-12T21:55:18.894+01:00  INFO 6580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-12T21:55:18.901+01:00  INFO 6580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-12T21:55:18.901+01:00  INFO 6580 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-12T21:55:18.966+01:00  INFO 6580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-12T21:55:18.966+01:00  INFO 6580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 781 ms
+2023-02-12T21:55:19.050+01:00  INFO 6580 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-12T21:55:19.081+01:00  INFO 6580 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-12T21:55:19.187+01:00  WARN 6580 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-12T21:55:19.261+01:00  INFO 6580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-12T21:55:19.473+01:00  INFO 6580 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e385b6f
+2023-02-12T21:55:19.475+01:00  INFO 6580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-12T21:55:19.489+01:00  INFO 6580 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2023-02-12T21:55:19.489+01:00  WARN 6580 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL57Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-02-12T21:55:20.156+01:00  INFO 6580 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-12T21:55:20.164+01:00  INFO 6580 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-12T21:55:20.333+01:00  WARN 6580 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-12T21:55:20.528+01:00  INFO 6580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-12T21:55:20.533+01:00  INFO 6580 --- [main] n.c.mailSender.MailSenderApplication     : Started MailSenderApplication in 2.637 seconds (process running for 2.974)
+2023-02-12T21:57:00.028+01:00  INFO 6580 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-12T21:57:00.029+01:00  INFO 6580 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-12T21:57:00.030+01:00  INFO 6580 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
