@@ -5,14 +5,16 @@ import lombok.extern.slf4j.Slf4j;
 import net.czaplinski.mailSender.domain.model.Mail;
 import net.czaplinski.mailSender.domain.model.MailContent;
 import org.springframework.mail.MailException;
-import org.springframework.mail.MailMessage;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-@Slf4j
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class MailSenderService {
     private final MailAddressesService addressesService;
     private final JavaMailSender javaMailSender;
@@ -20,9 +22,9 @@ public class MailSenderService {
     public void send(Mail mail) {
         try {
             javaMailSender.send(createMailMessage(mail));
-            log.info("Email has been sent to: " + mail.getAddress());
+            log.trace("Email has been sent to: " + mail.getAddress());
         } catch (MailException e) {
-            log.error("Failed to process email sending to: " + mail.getAddress() + " - reason: " + e.getMessage());
+            log.warn("Failed to process email sending to: " + mail.getAddress() + " - reason: " + e.getMessage());
         }
     }
 
@@ -34,16 +36,17 @@ public class MailSenderService {
         return mailMessage;
     }
 
-    public void prepareMails(MailContent content) {
-
+    public List<String> prepareMails(MailContent content) {
+        ArrayList<String> addressList = new ArrayList<>();
         addressesService.getAllAddresses().forEach(address -> {
-                    send(Mail.builder()
-                            .address(address.getEmailAddress())
-                            .subject(content.getSubject())
-                            .message(content.getMessage())
-                            .build());
-                }
-        );
+            addressList.add(address.getEmailAddress());
+            send(Mail.builder()
+                    .address(address.getEmailAddress())
+                    .subject(content.getSubject())
+                    .message(content.getMessage())
+                    .build());
+        });
+        return addressList;
     }
 }
 

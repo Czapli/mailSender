@@ -5,10 +5,12 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
 @Builder
 @AllArgsConstructor
+@ToString
 public class MailAddressesDto {
     private Long id;
     @NotEmpty(message = "Pleas provide email address")
