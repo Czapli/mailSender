@@ -2,7 +2,6 @@ package net.czaplinski.mailSender.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import net.czaplinski.mailSender.domain.model.MailContent;
 import net.czaplinski.mailSender.service.MailSenderService;
 import org.springframework.http.MediaType;
@@ -17,7 +16,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/send")
 @RequiredArgsConstructor
-@Slf4j
 public class MailSenderController {
     private final MailSenderService service;
 

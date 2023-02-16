@@ -25,41 +25,41 @@ public class MailAddressesService {
 
     public MailAddresses getById(Long id) throws AddressNotFoundException {
         Optional<MailAddresses> mailAddresses = repository.findById(id);
-        if (mailAddresses.isEmpty()) {
-            log.trace("can not find Email Address with ID: " + id);
-            throw new AddressNotFoundException();
-        } else {
+        if (mailAddresses.isPresent()) {
             log.trace("find email address: " + mailAddresses.get().getEmailAddress());
             return mailAddresses.get();
+        } else {
+            log.trace("can not find Email Address with ID: " + id);
+            throw new AddressNotFoundException();
         }
     }
 
-    public void addMailAddresses(MailAddresses mailAddress) {
+    public void addMailAddress(MailAddresses mailAddress) {
         MailAddresses saved = repository.save(mailAddress);
         log.trace("new email address has been added to DB: " + saved.getEmailAddress() + " with ID: " + saved.getId());
     }
 
     public void updateMailAddress(Long id, MailAddresses newMailAddress) throws AddressNotFoundException {
         Optional<MailAddresses> updatedMailAddresses = repository.findById(id);
-        if (updatedMailAddresses.isEmpty()) {
-            log.trace("can not updated email address with ID: " + id);
-            throw new AddressNotFoundException();
-        } else {
+        if (updatedMailAddresses.isPresent()) {
             updatedMailAddresses.get().setEmailAddress(newMailAddress.getEmailAddress());
             updatedMailAddresses.get().setModificationDate(LocalDateTime.now());
             log.trace("update email address with ID: " + id + " for : " + newMailAddress.getEmailAddress());
             repository.save(updatedMailAddresses.get());
+        } else {
+            log.trace("can not updated email address with ID: " + id);
+            throw new AddressNotFoundException();
         }
     }
 
     public void deleteMailAddress(Long id) throws AddressNotFoundException {
         Optional<MailAddresses> updatedMailAddresses = repository.findById(id);
-        if (updatedMailAddresses.isEmpty()) {
-            log.trace("can not updated email address with ID: " + id);
-            throw new AddressNotFoundException();
-        } else {
+        if (updatedMailAddresses.isPresent()) {
             log.trace("delete email address with ID: " + id);
             repository.deleteById(id);
+        } else {
+            log.trace("can not updated email address with ID: " + id);
+            throw new AddressNotFoundException();
         }
     }
 }

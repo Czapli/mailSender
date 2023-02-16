@@ -16,15 +16,15 @@
 
     <appender name="InfoAll"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGS}/all_INFO.log</file>
+        <file>${LOGS}/Info.log</file>
         <encoder
                 class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>%d %p [%t] %C:  %msg%n%throwable</Pattern>
+            <Pattern>%d %p [%t] %C: %msg%n%throwable</Pattern>
         </encoder>
 
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOGS}/archived/all_INFO-%d{yyyy-MM-dd}.%i.log
+            <fileNamePattern>${LOGS}/archived/Info-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -37,7 +37,7 @@
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS}/HttpRequest.log</file>
         <encoder>
-            <Pattern>%d %p [%t] %C:  %msg%n%throwable</Pattern>
+            <Pattern>%d %p [%t] %C: %msg%n%throwable</Pattern>
         </encoder>
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -56,7 +56,7 @@
         <file>${LOGS}/Service.log</file>
         <encoder
                 class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>%d %p [%t] %C:  %msg%n%throwable</Pattern>
+            <Pattern>%d %p [%t] %C: %msg%n%throwable</Pattern>
         </encoder>
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
